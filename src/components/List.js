@@ -15,7 +15,7 @@ export default function List({ todoData, setTodoData }) {
         padding: "5px 9px",
         borderRadius: "50%",
         cursor: "pointer",
-        float: "right"
+        float: "right" 
     }
 
     const handleClick = (id) => {
