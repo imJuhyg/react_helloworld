@@ -5,11 +5,18 @@ import Form from './components/Form';
 import List from './components/List';
 
 export default function App() {
-  // state = {
-  //   todoData : [],
-  //   value : ""
-  // };
-  const [todoData, setTodoData] = useState([]);
+  const [todoData, setTodoData] = useState([
+    {
+      id: 1,
+      title: "공부하기",
+      completed: false
+    },
+    {
+      id: 2,
+      title: "밥먹기 ",
+      completed: false
+    }
+  ]);
   const [value, setValue] = useState("");
 
   const handleSubmit = (e) => {
@@ -30,12 +37,11 @@ export default function App() {
   // functional component는 render()가 필요없음
   // 함수를 정의할 때 const를 붙여주고 사용하는 부분에서 this. 을 더이상 붙일 필요 없음
   return (
-    <div className="container">
-      <div className="todoBlock">
-        <div class="title">
-          <h1 className="text-3xl font-bold">할 일 목록</h1> 
+    <div className='flex items-center justify-center w-screen h-screen bg-blue-100'>
+      <div className='w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg'>
+        <div className='flex justify-between mb-3'>
+          <h1>할 일 목록</h1>
         </div>
-        <h1 className="text-3xl font-bold underline">Hello World!</h1> 
         <List todoData={todoData} setTodoData={setTodoData} />
         <Form handleSubmit={handleSubmit} value={value} setValue={setValue} />
       </div>
